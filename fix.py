@@ -19,6 +19,7 @@ df_clean.head()
 df_clean = df_clean.drop(['WLD','G20','OEU','EU28','OECD'])
 df_clean.reset_index(drop=False,inplace=True)
 st.title("Data Produksi Minyak Berbagai Negara")
+st.set_page_config(layout="wide")
 
 kode_negara = list(df['kode_negara'].unique())#membuat kode negara unik
 #print(f"Kode: {kode_negara}")
@@ -110,7 +111,7 @@ ax2.barh(df_nomer2['negara'],df_nomer2['produksi'])
 grafik2.pyplot(fig2)
 ############### persoalan c ###############
 
-B2 = int(pilihan.number_input("Jumlah Negara ",min_value=1,max_value=None,value=10))
+B2 = st.number_input("Jumlah Negara ",min_value=1,max_value=None,value=10,key="kumulatif"))
 produksi_kumulatif = []
 
 for i in kode_negara:
