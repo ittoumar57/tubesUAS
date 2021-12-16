@@ -94,7 +94,7 @@ T = st.sidebar.selectbox("Tahun ", list_tahun)
 B1 = st.sidebar.number_input("Jumlah Negara ",min_value=1, max_value=None)
 
 judul2 = ("Grafik ",B1," Besar Negara Pada Tahun ",T)
-df_nomer2 = df_clean.loc[df['tahun'] ==T].sort_values(by=['produksi'], ascending=False)
+df_nomer2 = df_clean.loc[df_clean['tahun'] ==T].sort_values(by=['produksi'], ascending=False)
 
 nama_df2 = []
 for i in range(len(list(df_nomer2['kode_negara']))):
