@@ -66,7 +66,7 @@ judul1, judul2 = st.columns((1,1))
 grafik1,grafik2 = st.columns((1,1))
 
 N = pilihan1.selectbox("Pilih Negara", nama_negara)
-judul1 = ("Produksi Negara ",N," Pada seluruh tahun")
+judul1 = "Produksi Negara diatas Pada seluruh tahun"
 
 kodenegarahuruf = []
 for i in range(len(nama_negara)):
@@ -85,7 +85,7 @@ for i in range(len(list(df_clean['kode_negara']))):
     if kodenegarahuruf == list(df_clean['kode_negara'])[i]:
         list_produksi.append(list(df_clean['produksi'])[i])
         list_tahun.append(list(df_clean['tahun'])[i])
-judul1 = ("Produksi Minyak Negara ",N)
+
 fig1, ax = plt.subplots()
 ax.plot(list_tahun,list_produksi),ax.set_xlabel('Tahun'),ax.set_ylabel('Produksi'),plt.show()
 grafik1.pyplot(fig1)
@@ -109,7 +109,7 @@ df_nomer2['negara'] = nama_df2
 B1 = int(pilihan3.number_input("Jumlah Negara Ditampilkan ",min_value=1, max_value=None,value=10))
 df_nomer2 = df_nomer2[:B1]
 
-judul2 = ("Grafik ",B1," Besar Negara Pada Tahun ",T)
+judul2 = "Grafik Sejumlah Negara Pada Tahun tersebut"
 fig2,ax2 = plt.subplots()
 ax2.barh(df_nomer2['negara'],df_nomer2['produksi'])
 grafik2.pyplot(fig2)
