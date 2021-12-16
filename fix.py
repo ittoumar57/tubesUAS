@@ -63,7 +63,7 @@ df_lengkap = pd.DataFrame(list(zip(nama_negara, kode_negara, kode_angka, region_
 ## User inputs on the control panel
 pilihan1, pilihan2,pilihan3 = st.columns((2,1,1))
 judul1, judul2 = st.columns((1,1))
-grafik1,grafik2 = st.columns(2)
+grafik1,grafik2 = st.columns((1,1))
 
 N = pilihan1.selectbox("Pilih Negara", nama_negara)
 judul1 = ("Produksi Negara ",N," Pada seluruh tahun")
