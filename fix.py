@@ -63,7 +63,7 @@ st.sidebar.title("Pengaturan")
 ## User inputs on the control panel
 
 nama_negara = []
-N = st.sidebar.selectbox("Pilih Negara", nama_negara)
+N = st.selectbox("Pilih Negara", nama_negara)
 judul1, judul2 = st.columns(2)
 grafik1,grafik2 = st.columns(2)
 
@@ -90,7 +90,7 @@ ax.plot(list_tahun,list_produksi),ax.set_xlabel('Tahun'),ax.set_ylabel('Produksi
 grafik1.pyplot(fig1)
 
 ###persoalan b###
-T = st.sidebar.selectbox("Tahun ", list_tahun)
+T = st.selectbox("Tahun ", list_tahun)
 
 gambar, pilihan = st.columns((0.5,1))
 
@@ -105,7 +105,7 @@ for i in range(len(list(df_nomer2['kode_negara']))):
 
 df_nomer2['negara'] = nama_df2
 
-B1 = st.sidebar.number_input("Jumlah Negara Ditampilkan ",min_value=1, max_value=None,value=10)
+B1 = st.number_input("Jumlah Negara Ditampilkan ",min_value=1, max_value=None,value=10)
 df_nomer2 = df_nomer2[:B1]
 
 judul2 = ("Grafik ",B1," Besar Negara Pada Tahun ",T)
