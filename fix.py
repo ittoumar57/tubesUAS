@@ -130,7 +130,7 @@ produksi_nomer3 = df_nomer3['produksi_kumulatif']
 fig3,ax3 = plt.subplots()
 
 ax.pie(df_nomer3['produksi_kumulatif'],labels=df_nomer3['kode_negara'])
-ax.set_title("Grafik ",str(B2)," Negara Terbesar")
+ax.set_title("Grafik ",B2," Negara Terbesar")
 st.pyplot(fig3)
 ############### upper left column ###############
 
