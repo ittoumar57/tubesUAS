@@ -62,11 +62,11 @@ df_lengkap = pd.DataFrame(list(zip(nama_negara, kode_negara, kode_angka, region_
 
 ## User inputs on the control panel
 pilihan1, pilihan2,pilihan3 = st.columns((2,1,1))
-judul1, judul2 = st.columns((1,1))
+judul1, judul2 = st.columns(2)
 grafik1,grafik2 = st.columns((1,1))
 
 N = pilihan1.selectbox("Pilih Negara", nama_negara)
-judul1 = "Produksi Negara diatas Pada seluruh tahun"
+judul1.subheader("Produksi Negara pilihan Pada seluruh tahun") 
 
 kodenegarahuruf = []
 for i in range(len(nama_negara)):
@@ -109,7 +109,7 @@ df_nomer2['negara'] = nama_df2
 B1 = int(pilihan3.number_input("Jumlah Negara Ditampilkan ",min_value=1, max_value=None,value=10))
 df_nomer2 = df_nomer2[:B1]
 
-judul2 = "Grafik Sejumlah Negara Pada Tahun tersebut"
+judul2.subheader("Grafik Sejumlah Negara Pada Tahun tersebut")
 fig2,ax2 = plt.subplots()
 ax2.barh(df_nomer2['negara'],df_nomer2['produksi'])
 grafik2.pyplot(fig2)
