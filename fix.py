@@ -11,8 +11,9 @@ from matplotlib import pyplot as plt
 import streamlit as st
 import json
 
-st.title("Data Produksi Minyak Berbagai Negara")
 st.set_page_config(layout="wide")
+st.title("Data Produksi Minyak Berbagai Negara")
+
 ###membaca data csv dan menyesuaikan dengan file json, mengeluarkan data yg tidak ada di json###
 df = pd.read_csv('produksi_minyak_mentah.csv')
 df_clean = df.set_index('kode_negara')
