@@ -90,7 +90,7 @@ ax.plot(list_tahun,list_produksi),ax.set_title('Grafik Negara ',N),ax.set_xlabel
 grafik1.pyplot(fig1)
 
 ###persoalan b###
-T = st.sidebar.select_slider("Tahun ", list_tahun)
+T = st.sidebar.selectbox("Tahun ", list_tahun)
 B1 = st.sidebar.number_input("Jumlah Negara ",min_value=1, max_value=None)
 
 judul2 = ("Grafik ",B1," Besar Negara Pada Tahun ",T)
