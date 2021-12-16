@@ -61,10 +61,11 @@ for i in range(len(kode_negara)):
 df_lengkap = pd.DataFrame(list(zip(nama_negara, kode_negara, kode_angka, region_json, subregion_json)), columns=['negara', 'alpha-3', 'kode negara', 'region', 'sub-region'])
 
 ## User inputs on the control panel
-
-N = st.selectbox("Pilih Negara", nama_negara)
 judul1, judul2 = st.columns(2)
 grafik1,grafik2 = st.columns(2)
+pilihan1, pilihan2,pilihan3 = st.columns((2,1,1))
+N = pilihan1.selectbox("Pilih Negara", nama_negara)
+
 
 kodenegarahuruf = []
 for i in range(len(nama_negara)):
@@ -89,7 +90,7 @@ ax.plot(list_tahun,list_produksi),ax.set_xlabel('Tahun'),ax.set_ylabel('Produksi
 grafik1.pyplot(fig1)
 
 ###persoalan b###
-T = st.selectbox("Tahun ", list_tahun)
+T = pilihan2.selectbox("Tahun ", list_tahun)
 
 gambar, pilihan = st.columns((0.5,1))
 
@@ -104,7 +105,7 @@ for i in range(len(list(df_nomer2['kode_negara']))):
 
 df_nomer2['negara'] = nama_df2
 
-B1 = st.number_input("Jumlah Negara Ditampilkan ",min_value=1, max_value=None,value=10)
+B1 = int(pilihan3.number_input("Jumlah Negara Ditampilkan ",min_value=1, max_value=None,value=10))
 df_nomer2 = df_nomer2[:B1]
 
 judul2 = ("Grafik ",B1," Besar Negara Pada Tahun ",T)
