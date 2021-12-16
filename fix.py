@@ -91,7 +91,7 @@ grafik1.pyplot(fig1)
 
 ###persoalan b###
 T = st.sidebar.selectbox("Tahun ", list_tahun)
-B1 = st.sidebar.number_input("Jumlah Negara ",min_value=1, max_value=None)
+B1 = st.sidebar.number_input("Jumlah Negara ",min_value=1, max_value=None,value=10)
 
 judul2 = ("Grafik ",B1," Besar Negara Pada Tahun ",T)
 df_nomer2 = df_clean.loc[df_clean['tahun'] ==T].sort_values(by=['produksi'], ascending=False)
@@ -110,7 +110,7 @@ ax2.barh(df_nomer2['negara'],df_nomer2['produksi'])
 grafik2.pyplot(fig2)
 ############### persoalan c ###############
 
-B2 = st.number_input("Jumlah Negara ",min_value=1,max_value=None)
+B2 = st.number_input("Jumlah Negara ",min_value=1,max_value=None,value=10)
 produksi_kumulatif = []
 
 for i in kode_negara:
