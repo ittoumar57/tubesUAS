@@ -111,7 +111,7 @@ ax2.barh(df_nomer2['negara'],df_nomer2['produksi'])
 grafik2.pyplot(fig2)
 ############### persoalan c ###############
 
-B2 = st.number_input("Jumlah Negara ",min_value=1,max_value=None,value=10,key="kumulatif"))
+B2 = st.number_input("Jumlah Negara ",min_value=1,max_value=None,value=10,key="kumulatif")
 produksi_kumulatif = []
 
 for i in kode_negara:
