@@ -91,11 +91,10 @@ grafik1.pyplot(fig1)
 
 ###persoalan b###
 T = st.sidebar.selectbox("Tahun ", list_tahun)
-B1 = st.sidebar.number_input("Jumlah Negara ",min_value=1, max_value=None,value=10)
 
 gambar, pilihan = st.columns((0.5,1))
 
-judul2 = ("Grafik ",B1," Besar Negara Pada Tahun ",T)
+
 df_nomer2 = df_clean.loc[df_clean['tahun'] ==T].sort_values(by=['produksi'], ascending=False)
 
 nama_df2 = []
@@ -105,8 +104,11 @@ for i in range(len(list(df_nomer2['kode_negara']))):
             nama_df2.append(list(df_lengkap['negara'])[j])
 
 df_nomer2['negara'] = nama_df2
+
+B1 = st.sidebar.number_input("Jumlah Negara ",min_value=1, max_value=None,value=10)
 df_nomer2 = df_nomer2[:B1]
 
+judul2 = ("Grafik ",B1," Besar Negara Pada Tahun ",T)
 fig2,ax2 = plt.subplots()
 ax2.barh(df_nomer2['negara'],df_nomer2['produksi'])
 grafik2.pyplot(fig2)
