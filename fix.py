@@ -86,7 +86,7 @@ for i in range(len(list(df_clean['kode_negara']))):
         list_tahun.append(list(df_clean['tahun'])[i])
 judul1 = ("Produksi Minyak Negara ",N)
 fig1, ax = plt.subplots()
-ax.plot(list_tahun,list_produksi),ax.set_title('Grafik Negara ',N),ax.set_xlabel('Tahun'),ax.set_ylabel('Produksi'),plt.show()
+ax.plot(list_tahun,list_produksi),ax.set_xlabel('Tahun'),ax.set_ylabel('Produksi'),plt.show()
 grafik1.pyplot(fig1)
 
 ###persoalan b###
@@ -128,9 +128,7 @@ negara3 = df_nomer3['kode_negara']
 produksi_nomer3 = df_nomer3['produksi_kumulatif']
 
 fig3,ax3 = plt.subplots()
-
-ax.pie(df_nomer3['produksi_kumulatif'],labels=df_nomer3['kode_negara'])
-ax.set_title("Grafik ",B2," Negara Terbesar")
+ax3.pie(df_nomer3['produksi_kumulatif'],labels=df_nomer3['kode_negara'])
 st.pyplot(fig3)
 ############### upper left column ###############
 
