@@ -105,7 +105,7 @@ for i in range(len(list(df_nomer2['kode_negara']))):
 
 df_nomer2['negara'] = nama_df2
 
-B1 = st.sidebar.number_input("Jumlah Negara ",min_value=1, max_value=None,value=10)
+B1 = st.sidebar.number_input("Jumlah Negara Ditampilkan ",min_value=1, max_value=None,value=10)
 df_nomer2 = df_nomer2[:B1]
 
 judul2 = ("Grafik ",B1," Besar Negara Pada Tahun ",T)
