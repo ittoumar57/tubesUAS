@@ -128,6 +128,7 @@ df_nomer3 = df_nomer3[:B2]
 negara3 = df_nomer3['kode_negara']
 produksi_nomer3 = df_nomer3['produksi_kumulatif']
 
+st.subheader("Sejumlah Negara dengan Produksi Kumulatif tertinggi")
 fig3,ax3 = plt.subplots()
 ax3.pie(df_nomer3['produksi_kumulatif'],labels=df_nomer3['kode_negara'])
 st.pyplot(fig3)
