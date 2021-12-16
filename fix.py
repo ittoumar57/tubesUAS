@@ -11,7 +11,7 @@ from matplotlib import pyplot as plt
 import streamlit as st
 import json
 
-st.set_page_config(layout="wide")
+st.set_page_config(layout="wide",page_icon="valorant.png")
 st.title("Data Produksi Minyak Berbagai Negara")
 
 ###membaca data csv dan menyesuaikan dengan file json, mengeluarkan data yg tidak ada di json###
