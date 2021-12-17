@@ -12,8 +12,9 @@ import streamlit as st
 import json
 
 st.set_page_config(layout="wide",page_icon="valorant.png")
-logo1,logo2,kosong = st.columns((1,1,2))
+logo1,kosong,logo2 = st.columns((1,2,1))
 logo1.image("logo_itb_1024.png", width=150)
+kosong.header("UAS Pemrogramman Komputer 12220057")
 logo2.image("patra.png", width=150)
 st.title("Data Produksi Minyak Berbagai Negara")
 
