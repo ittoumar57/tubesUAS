@@ -133,7 +133,7 @@ fig3,ax3 = plt.subplots()
 ax3.pie(df_nomer3['produksi_kumulatif'],labels=df_nomer3['kode_negara'])
 st.pyplot(fig3)
 ############### nomer 4 ###############
-
+###Produksi Terbesar pada tahunnya dan kumulatif
 st.title("Informasi")
 #produksi minyak terbesar pada tahunnya
 df_nomer4 = df_clean[df_clean['tahun']==T].sort_values(by=['produksi'],ascending=False).head(1).to_numpy()
@@ -143,13 +143,17 @@ df_nomer4lagi = df_lengkap[df_lengkap['alpha-3'] == df_nomer4[0][0]].head(1).to_
 st.write(df_nomer4lagi[0][0],df_nomer4lagi[0][1],df_nomer4lagi[0][2],df_nomer4lagi[0][3],df_nomer4lagi[0][4])
 #produksi minyak terbesar
 produksiminyakterbesar = df_clean[df_clean['produksi'] == df_clean['produksi'].max()].to_numpy()
-st.subheader("Negara Produksi Minyak Terbesar Kumulatif")
+st.subheader("Negara Produksi Minyak Pada Keseluruhan Tahun")
 st.write(produksiminyakterbesar[0][0], produksiminyakterbesar[0][2])
 produksiminyakterbesardetail = df_lengkap[df_lengkap['alpha-3'] == produksiminyakterbesar[0][0]].to_numpy()
 st.write(produksiminyakterbesardetail[0][0],produksiminyakterbesardetail[0][1],produksiminyakterbesardetail[0][2],produksiminyakterbesardetail[0][3],produksiminyakterbesardetail[0][4])
 
-
-
+###Produksi Terkecil Kumulatif !=0
+df_4coba = pd.DataFrame(list(zip(kode_negara,produksi_kumulatif,region_json,subregion_json)),columns =['kode_negara','produksi_kumulatif','region','subregion']).sort_values(by=['produksi_kumulatif'], ascending=True)
+df_4 = df_4coba[df_4coba['produksi_kumulatif'] != 0]
+df_4 = df_4[['kode_negara','produksi_kumulatif','region','subregion']]
+terkecil_kumulatif = df_4[df_4['produksi_kumulatif']==df_4['produksi_kumulatif'].min()]
+st.write(terkecil_kumulatif)
 
 
 
