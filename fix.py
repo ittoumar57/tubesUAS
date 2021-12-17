@@ -1,7 +1,5 @@
 """
-Aplikasi Streamlit untuk menggambarkan statistik penumpang TransJakarta
-
-Sumber data berasal dari Jakarta Open Data
+Aplikasi Streamlit untuk menggambarkan data produksi minyak
 Referensi API Streamlit: https://docs.streamlit.io/library/api-reference
 """
 
