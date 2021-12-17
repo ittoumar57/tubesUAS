@@ -152,7 +152,7 @@ st.write(produksiminyakterbesardetail[0][0],produksiminyakterbesardetail[0][1],p
 df_4coba = pd.DataFrame(list(zip(kode_negara,nama_negara,produksi_kumulatif,region_json,subregion_json)),columns =['kode_negara','nama_negara','produksi_kumulatif','region','subregion']).sort_values(by=['produksi_kumulatif'], ascending=True)
 df_4 = df_4coba[df_4coba['produksi_kumulatif'] != 0]
 df_4 = df_4[['kode_negara','nama_negara','produksi_kumulatif','region','subregion']]
-terkecil = df_4[df_4['produksi_kumulatif']==df_4['produksi_kumulatif'].min()]
+terkecil_kumulatif = df_4[df_4['produksi_kumulatif']==df_4['produksi_kumulatif'].min()]
 st.subheader("Negara dengan Produksi Kumulatif Terkecil")
 st.write(terkecil_kumulatif)
 
