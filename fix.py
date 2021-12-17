@@ -12,6 +12,9 @@ import streamlit as st
 import json
 
 st.set_page_config(layout="wide",page_icon="valorant.png")
+logo1,logo2,kosong = st.columns((1,1,2))
+logo1.image("logo_itb_1024.png", width=150)
+logo2.image("patra.png", width=150)
 st.title("Data Produksi Minyak Berbagai Negara")
 
 ###membaca data csv dan menyesuaikan dengan file json, mengeluarkan data yg tidak ada di json###
@@ -143,7 +146,7 @@ df_nomer4lagi = df_lengkap[df_lengkap['alpha-3'] == df_nomer4[0][0]].head(1).to_
 st.write(df_nomer4lagi[0][0],df_nomer4lagi[0][1],df_nomer4lagi[0][2],df_nomer4lagi[0][3],df_nomer4lagi[0][4])
 #produksi minyak terbesar
 produksiminyakterbesar = df_clean[df_clean['produksi'] == df_clean['produksi'].max()].to_numpy()
-st.subheader("Negara Produksi Minyak Pada Keseluruhan Tahun")
+st.subheader("Negara Produksi Minyak Terbesar Pada Keseluruhan Tahun")
 st.write(produksiminyakterbesar[0][0], produksiminyakterbesar[0][2])
 produksiminyakterbesardetail = df_lengkap[df_lengkap['alpha-3'] == produksiminyakterbesar[0][0]].to_numpy()
 st.write(produksiminyakterbesardetail[0][0],produksiminyakterbesardetail[0][1],produksiminyakterbesardetail[0][2],produksiminyakterbesardetail[0][3],produksiminyakterbesardetail[0][4])
