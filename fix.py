@@ -153,11 +153,13 @@ st.write(produksiminyakterbesardetail[0][0],produksiminyakterbesardetail[0][1],p
 #produksi minyak terkecil pada tahunnya
 df_bersih = df_clean[df_clean['produksi']!=0]
 produksiminyakterkeciltahun = df_bersih[df_bersih['tahun']==T].sort_values(by=['produksi'],ascending=True).head(1).to_numpy()
+st.subheader("Negara Produksi Minyak Terkecil Pada Tahun "+str(T))
 st.write(produksiminyakterkeciltahun[0][0], produksiminyakterkeciltahun[0][2])
 produksiminyakterkeciltahundetail = df_lengkap[df_lengkap['alpha-3'] == produksiminyakterkeciltahun[0][0]].head(1).to_numpy()
 st.write(produksiminyakterkeciltahundetail[0][0], produksiminyakterkeciltahundetail[0][1],produksiminyakterkeciltahundetail[0][2],produksiminyakterkeciltahundetail[0][3],produksiminyakterkeciltahundetail[0][4])
-#produksi minyak terkecil
+#produksi minyak terkecil keseluruhan tahun
 produksiminyakterkecil = df_bersih[df_bersih['produksi'] == df_bersih['produksi'].min()].head(1).to_numpy()
+st.subheader("Negara Produksi Minyak Terkecil Keseluruhan Tahun)
 st.write(produksiminyakterkecil[0][0], produksiminyakterkecil[0][2])
 produksiminyakterkecildetail = df_lengkap[df_lengkap['alpha-3'] == produksiminyakterkecil[0][0]].head(1).to_numpy()
 st.write(produksiminyakterkecildetail[0][0],produksiminyakterkecildetail[0][1],produksiminyakterkecildetail[0][2],produksiminyakterkecildetail[0][3],produksiminyakterkecildetail[0][4])
