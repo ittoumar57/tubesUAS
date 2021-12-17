@@ -150,6 +150,18 @@ st.write(produksiminyakterbesar[0][0], produksiminyakterbesar[0][2])
 produksiminyakterbesardetail = df_lengkap[df_lengkap['alpha-3'] == produksiminyakterbesar[0][0]].to_numpy()
 st.write(produksiminyakterbesardetail[0][0],produksiminyakterbesardetail[0][1],produksiminyakterbesardetail[0][2],produksiminyakterbesardetail[0][3],produksiminyakterbesardetail[0][4])
 
+#produksi minyak terkecil pada tahunnya
+df_bersih = df_clean[df_clean['produksi']!=0]
+produksiminyakterkeciltahun = df_bersih[df_bersih['tahun']==T].sort_values(by=['produksi'],ascending=True).head(1).to_numpy()
+st.write(produksiminyakterkeciltahun[0][0], produksiminyakterkeciltahun[0][2])
+produksiminyakterkeciltahundetail = df_lengkap[df_lengkap['alpha-3'] == produksiminyakterkeciltahun[0][0]].head(1).to_numpy()
+st.write(produksiminyakterkeciltahundetail[0][0], produksiminyakterkeciltahundetail[0][1],produksiminyakterkeciltahundetail[0][2],produksiminyakterkeciltahundetail[0][3],produksiminyakterkeciltahundetail[0][4])
+#produksi minyak terkecil
+produksiminyakterkecil = df_bersih[df_bersih['produksi'] == df_bersih['produksi'].min()].head(1).to_numpy()
+st.write(produksiminyakterkecil[0][0], produksiminyakterkecil[0][2])
+produksiminyakterkecildetail = df_lengkap[df_lengkap['alpha-3'] == produksiminyakterkecil[0][0]].head(1).to_numpy()
+st.write(produksiminyakterkecildetail[0][0],produksiminyakterkecildetail[0][1],produksiminyakterkecildetail[0][2],produksiminyakterkecildetail[0][3],produksiminyakterkecildetail[0][4])
+
 ###Produksi Terkecil Kumulatif !=0
 df_4coba = pd.DataFrame(list(zip(kode_negara,nama_negara,produksi_kumulatif,region_json,subregion_json)),columns =['kode_negara','nama_negara','produksi_kumulatif','region','subregion']).sort_values(by=['produksi_kumulatif'], ascending=True)
 df_4 = df_4coba[df_4coba['produksi_kumulatif'] != 0]
