@@ -134,14 +134,16 @@ ax3.pie(df_nomer3['produksi_kumulatif'],labels=df_nomer3['kode_negara'])
 st.pyplot(fig3)
 ############### nomer 4 ###############
 
-st.title("informasi")
+st.title("Informasi")
 #produksi minyak terbesar pada tahunnya
 df_nomer4 = df_clean[df_clean['tahun']==T].sort_values(by=['produksi'],ascending=False).head(1).to_numpy()
+st.subheader("Negara Produksi Minyak Terbesar pada tahun pilihan")
 st.write(df_nomer4[0][0], df_nomer4[0][2])
 df_nomer4lagi = df_lengkap[df_lengkap['alpha-3'] == df_nomer4[0][0]].head(1).to_numpy()
 st.write(df_nomer4lagi[0][0],df_nomer4lagi[0][1],df_nomer4lagi[0][2],df_nomer4lagi[0][3],df_nomer4lagi[0][4])
 #produksi minyak terbesar
 produksiminyakterbesar = df_clean[df_clean['produksi'] == df_clean['produksi'].max()].to_numpy()
+st.subheader("Negara Produksi Minyak Terbesar Kumulatif")
 st.write(produksiminyakterbesar[0][0], produksiminyakterbesar[0][2])
 produksiminyakterbesardetail = df_lengkap[df_lengkap['alpha-3'] == produksiminyakterbesar[0][0]].to_numpy()
 st.write(produksiminyakterbesardetail[0][0],produksiminyakterbesardetail[0][1],produksiminyakterbesardetail[0][2],produksiminyakterbesardetail[0][3],produksiminyakterbesardetail[0][4])
