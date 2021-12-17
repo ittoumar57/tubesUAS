@@ -66,7 +66,7 @@ judul1, judul2 = st.columns(2)
 grafik1,grafik2 = st.columns((1,1))
 
 N = pilihan1.selectbox("Pilih Negara", nama_negara)
-judul1.subheader("Produksi Negara pilihan Pada seluruh tahun") 
+judul1.subheader("Produksi Negara "+str(N)+ " Pada seluruh tahun") 
 
 kodenegarahuruf = []
 for i in range(len(nama_negara)):
@@ -109,7 +109,7 @@ df_nomer2['negara'] = nama_df2
 B1 = int(pilihan3.number_input("Jumlah Negara Ditampilkan ",min_value=1, max_value=None,value=10))
 df_nomer2 = df_nomer2[:B1]
 
-judul2.subheader("Grafik Sejumlah Negara Pada Tahun tersebut")
+judul2.subheader("Grafik Produksi Sejumlah Negara Pada Tahun "+str(T))
 fig2,ax2 = plt.subplots()
 ax2.barh(df_nomer2['negara'],df_nomer2['produksi'])
 grafik2.pyplot(fig2)
@@ -137,7 +137,7 @@ st.pyplot(fig3)
 st.title("Informasi")
 #produksi minyak terbesar pada tahunnya
 df_nomer4 = df_clean[df_clean['tahun']==T].sort_values(by=['produksi'],ascending=False).head(1).to_numpy()
-st.subheader("Negara Produksi Minyak Terbesar pada tahun pilihan")
+st.subheader("Negara Produksi Minyak Terbesar pada tahun "+str(T))
 st.write(df_nomer4[0][0], df_nomer4[0][2])
 df_nomer4lagi = df_lengkap[df_lengkap['alpha-3'] == df_nomer4[0][0]].head(1).to_numpy()
 st.write(df_nomer4lagi[0][0],df_nomer4lagi[0][1],df_nomer4lagi[0][2],df_nomer4lagi[0][3],df_nomer4lagi[0][4])
